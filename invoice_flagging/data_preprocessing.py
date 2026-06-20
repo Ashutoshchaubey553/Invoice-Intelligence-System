@@ -4,8 +4,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 import joblib
 
-def load_invoice_data():
-    conn = sqlite3.connect('/Users/ayushimishra/Downloads/Inventory Analysis Project/Inventory-Invoice-Analytics/data/inventory.db')
+def load_invoice_data(db_path='data/inventory.db'):
+    conn = sqlite3.connect(db_path)
 
     query = """
     WITH purchase_agg AS (
